@@ -1,0 +1,8 @@
+{
+  "name": "What I Tried",
+  "short_name": "WIT",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#080808"
+}

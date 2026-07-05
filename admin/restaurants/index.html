@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Owner restaurant manager for What I Tried">
+  <title>Restaurant Manager | What I Tried</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+</head>
+<body class="admin-body admin-light">
+  <section class="admin-login" id="login-view">
+    <form class="login-card" id="login-form" novalidate>
+      <a class="brand" href="../../index.html">
+        <span class="brand-mark">WIT</span>
+        <span class="brand-copy"><strong>Owner Admin</strong><span>Restaurant manager</span></span>
+      </a>
+      <span class="admin-kicker">Private access</span>
+      <h1>Enter your passcode.</h1>
+      <p class="muted">Unlock the owner dashboard to add, edit or remove restaurants on this browser.</p>
+      <div class="field admin-password-field">
+        <label for="passcode">Passcode</label>
+        <div class="password-control">
+          <input class="form-control" id="passcode" type="password" autocomplete="off" required autofocus>
+          <button class="password-toggle" id="toggle-password" type="button" aria-label="Show passcode">Show</button>
+        </div>
+      </div>
+      <button class="btn btn-primary admin-login-button" type="submit">Unlock Admin</button>
+      <p id="login-error" class="login-error" role="alert"></p>
+      <a class="admin-back-link" href="../../index.html">← Return to website</a>
+    </form>
+  </section>
+
+  <div class="admin-shell admin-manager-shell" id="admin-shell" hidden>
+    <header class="admin-manager-header">
+      <a class="brand" href="../../index.html">
+        <span class="brand-mark">WIT</span>
+        <span class="brand-copy"><strong>Owner Admin</strong><span>Restaurant manager</span></span>
+      </a>
+      <div class="admin-header-actions">
+        <a class="btn" href="../../index.html">View website</a>
+        <button class="btn" id="view-submissions" type="button">Submissions <span id="submission-badge" class="admin-count-badge">0</span></button>
+        <button class="btn btn-danger" id="logout" type="button">Log out</button>
+      </div>
+    </header>
+
+    <main class="admin-manager-main">
+      <section class="admin-title-row">
+        <div><span class="eyebrow">Admin / Restaurants</span><h1>Restaurant Manager</h1></div>
+        <p>Changes appear across the public site after the page is refreshed. Use Live Server or a hosted URL so every page shares the same browser storage.</p>
+      </section>
+
+      <section class="admin-stats">
+        <div class="admin-stat"><strong id="count-places">0</strong><span>Places</span></div>
+        <div class="admin-stat"><strong id="count-dishes">0</strong><span>Dishes</span></div>
+        <div class="admin-stat"><strong id="count-favs">0</strong><span>Favourites</span></div>
+        <div class="admin-stat"><strong id="count-submissions">0</strong><span>Submissions</span></div>
+      </section>
+
+      <section class="admin-form-grid">
+        <article class="admin-editor-card">
+          <div class="admin-card-heading"><span>Add a new place</span><h2>Add Restaurant</h2></div>
+          <form id="add-form" class="admin-form">
+            <div class="admin-two-cols">
+              <div class="field"><label for="add-name">Name</label><input class="form-control" id="add-name" required></div>
+              <div class="field"><label for="add-city">City</label><input class="form-control" id="add-city" value="Hyderabad" required></div>
+            </div>
+            <div class="admin-two-cols">
+              <div class="field"><label for="add-category">Category</label><select class="form-control" id="add-category"></select></div>
+              <div class="field"><label for="add-rating">Rating out of 5</label><input class="form-control" id="add-rating" type="number" min="0" max="5" step="0.1"></div>
+            </div>
+            <div class="admin-two-cols">
+              <div class="field"><label for="add-recommendation">Recommendation</label><select class="form-control" id="add-recommendation"><option value="">Recorded</option><option value="beyond-perfect">Beyond Perfect</option><option value="favourite">My Favourite</option><option value="good">Good</option><option value="average">Average</option><option value="skip">Skip</option></select></div>
+              <div class="field"><label for="add-image">Image URL</label><input class="form-control" id="add-image" type="url" placeholder="https://..."></div>
+            </div>
+            <div class="field"><label for="add-review">Review</label><textarea class="form-control" id="add-review" placeholder="Your honest note about the restaurant"></textarea></div>
+            <div class="field"><label for="add-dishes">Dishes tried — one per line</label><textarea class="form-control compact-textarea" id="add-dishes" placeholder="Dish name&#10;Another dish"></textarea></div>
+            <button class="btn btn-primary admin-submit" type="submit">Add Restaurant</button>
+            <p class="admin-form-status" id="add-status" role="status"></p>
+          </form>
+        </article>
+
+        <article class="admin-editor-card">
+          <div class="admin-card-heading"><span>Update an existing place</span><h2>Edit Restaurant</h2></div>
+          <form id="edit-form" class="admin-form">
+            <div class="field"><label for="edit-place">Place</label><select class="form-control" id="edit-place"></select></div>
+            <div class="admin-two-cols">
+              <div class="field"><label for="edit-name">Name</label><input class="form-control" id="edit-name" required></div>
+              <div class="field"><label for="edit-city">City</label><input class="form-control" id="edit-city" required></div>
+            </div>
+            <div class="admin-two-cols">
+              <div class="field"><label for="edit-category">Categories</label><input class="form-control" id="edit-category" placeholder="Cafés, Restro & Bars"></div>
+              <div class="field"><label for="edit-rating">Rating out of 5</label><input class="form-control" id="edit-rating" type="number" min="0" max="5" step="0.1"></div>
+            </div>
+            <div class="admin-two-cols">
+              <div class="field"><label for="edit-recommendation">Recommendation</label><select class="form-control" id="edit-recommendation"><option value="">Recorded</option><option value="beyond-perfect">Beyond Perfect</option><option value="favourite">My Favourite</option><option value="good">Good</option><option value="average">Average</option><option value="skip">Skip</option></select></div>
+              <div class="field"><label for="edit-image">Image URL</label><input class="form-control" id="edit-image" type="text" placeholder="https://... or assets/images/..."></div>
+            </div>
+            <div class="field"><label for="edit-review">Review</label><textarea class="form-control" id="edit-review"></textarea></div>
+            <div class="field"><label for="edit-dishes">Dishes tried — one per line</label><textarea class="form-control compact-textarea" id="edit-dishes"></textarea></div>
+            <div class="admin-edit-actions">
+              <button class="btn btn-primary admin-submit" type="submit">Save Changes</button>
+              <button class="btn btn-danger" id="delete-place" type="button">Delete Restaurant</button>
+            </div>
+            <p class="admin-form-status" id="edit-status" role="status"></p>
+          </form>
+        </article>
+      </section>
+
+      <section class="admin-list-section">
+        <div class="admin-list-head"><div><span class="eyebrow">Full collection</span><h2>All Restaurants</h2></div>
+          <div class="admin-tools"><input class="form-control" id="admin-search" placeholder="Search restaurants…"><button class="btn" id="export-data" type="button">Export JSON</button><button class="btn" id="reset-data" type="button">Reset edits</button></div></div>
+        <div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Image</th><th>Restaurant</th><th>City</th><th>Categories</th><th>Rating</th><th>Dishes</th><th>Action</th></tr></thead><tbody id="admin-rows"></tbody></table></div>
+      </section>
+    </main>
+  </div>
+
+  <dialog class="admin-dialog" id="submissions-dialog">
+    <div class="dialog-head"><h3>Contact submissions</h3><button class="icon-btn" id="close-submissions" type="button" aria-label="Close">×</button></div>
+    <div class="dialog-body" id="submissions-body"></div>
+  </dialog>
+
+  <script src="../../assets/data.js"></script>
+  <script src="../../assets/admin.js"></script>
+</body>
+</html>

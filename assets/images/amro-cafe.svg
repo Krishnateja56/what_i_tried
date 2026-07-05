@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="t d">
+<title id="t">Amro Café editorial food illustration</title><desc id="d">A dark café table with coffee, pancakes, prawns and pastry.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#161711"/><stop offset="1" stop-color="#070807"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#d4af37" stop-opacity=".38"/><stop offset="1" stop-color="#d4af37" stop-opacity="0"/></radialGradient>
+ <linearGradient id="plate" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f4ead7"/><stop offset="1" stop-color="#b69e78"/></linearGradient>
+</defs>
+<rect width="1600" height="1000" fill="url(#bg)"/><circle cx="1150" cy="250" r="500" fill="url(#glow)"/>
+<g opacity=".18" stroke="#d4af37"><path d="M0 780C350 650 520 920 870 720s480-80 730-230" fill="none" stroke-width="3"/><path d="M0 820C380 690 520 960 900 760s500-70 700-190" fill="none"/></g>
+<ellipse cx="495" cy="560" rx="360" ry="190" fill="#0b0b09" opacity=".75"/>
+<ellipse cx="500" cy="520" rx="330" ry="170" fill="url(#plate)"/>
+<g fill="#d9a24d" stroke="#7d4a19" stroke-width="8">
+ <ellipse cx="375" cy="500" rx="78" ry="34" transform="rotate(-20 375 500)"/><ellipse cx="505" cy="448" rx="78" ry="34" transform="rotate(12 505 448)"/><ellipse cx="630" cy="515" rx="78" ry="34" transform="rotate(28 630 515)"/>
+</g>
+<g fill="none" stroke="#f0cf86" stroke-width="14"><path d="M330 486c42-50 85-49 119-5"/><path d="M460 434c45-38 91-29 122 8"/><path d="M582 493c35-31 80-23 116 15"/></g>
+<g transform="translate(930 520)"><ellipse rx="230" ry="125" fill="#0a0a09" opacity=".8"/><ellipse cy="-35" rx="205" ry="108" fill="#e5d0a0"/><ellipse cy="-58" rx="175" ry="80" fill="#c58e3a"/><ellipse cy="-88" rx="160" ry="70" fill="#e1ad52"/><path d="M-135-95c70-35 205-28 277 0" fill="none" stroke="#f5d996" stroke-width="18"/><circle cx="50" cy="-118" r="22" fill="#6f1b2b"/></g>
+<g transform="translate(1290 365)"><ellipse cy="120" rx="130" ry="40" fill="#050505" opacity=".7"/><path d="M-105 0h210l-25 170H-80z" fill="#d8c7aa"/><ellipse rx="105" ry="34" fill="#f3ede3"/><ellipse rx="85" ry="22" fill="#4e2c1c"/><path d="M95 30c80 0 75 110 5 115" fill="none" stroke="#d8c7aa" stroke-width="28" stroke-linecap="round"/></g>
+<g transform="translate(1180 730)"><path d="M-160 60L0-105 170 70z" fill="#d8a45a"/><path d="M-120 40L0-68 120 48z" fill="#702d6a" opacity=".7"/><circle cx="20" cy="-5" r="12" fill="#b94b73"/><circle cx="-30" cy="20" r="10" fill="#b94b73"/></g>
+<text x="100" y="115" fill="#e7c96b" font-family="Arial, sans-serif" font-size="38" font-weight="700" letter-spacing="8">AMRO CAFÉ</text>
+<text x="102" y="164" fill="#f7f4ee" opacity=".72" font-family="Arial, sans-serif" font-size="22" letter-spacing="3">EDITORIAL FOOD VISUAL</text>
+</svg>
